@@ -11,8 +11,6 @@ the function below should be the only one in this file.
 */
 
 #include "split.h"
-#include <iostream>
-using namespace std;
 
 /* Add a prototype for a helper function here if you need */
 
@@ -28,7 +26,6 @@ void split(Node*& in, Node*& odds, Node*& evens) // *& can change value and addr
 
   else if ((position -> value) % 2 == 0){ // if even 
     evens = position; // assign pos to even
-    //cout << "even" << evens -> value << endl; 
     position = position -> next; // move down in position
     split(position, odds, evens -> next); 
     //recursively call again but moving down in 1 & odd 1 */
@@ -36,7 +33,6 @@ void split(Node*& in, Node*& odds, Node*& evens) // *& can change value and addr
   
   else { // if odd 
     odds = position;  
-    //cout << "odds" << odds -> value << endl;
     position = position -> next;
     split(position, odds -> next, evens); 
   }
